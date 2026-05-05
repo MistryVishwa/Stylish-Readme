@@ -2,9 +2,13 @@
   "version": 2,
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [
-    { "source": "/api/:type.svg", "destination": "/api/widget?type=:type" }
+
+  "routes": [
+    { "src": "^/api/([\\w-]+)\\.svg$", "dest": "/api/widget?type=$1" },
+    { "handle": "filesystem" },
+    { "src": "^/(.*)$", "dest": "/index.html" }
   ],
+
   "headers": [
     {
       "source": "/api/:type.svg",
@@ -12,12 +16,6 @@
         { "key": "Content-Type", "value": "image/svg+xml; charset=utf-8" },
         { "key": "Cache-Control", "value": "public, max-age=60, s-maxage=60, stale-while-revalidate=120" },
         { "key": "Access-Control-Allow-Origin", "value": "*" }
-      ]
-    },
-    {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" }
       ]
     }
   ]

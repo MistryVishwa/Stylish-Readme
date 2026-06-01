@@ -181,3 +181,4 @@ npm start (static preview only — no server.js needed, project is fully serverles
 ```
 
 The UI workshop will be available at `http://localhost:5000`.
+

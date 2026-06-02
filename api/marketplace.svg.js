@@ -1,3 +1,9 @@
+function escXml(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&apos;');
+}
+
 export default function handler(req, res) {
   const { platform, id } = req.query;
 
@@ -9,12 +15,12 @@ export default function handler(req, res) {
   let color = "#4A90E2";
 
   if (platform === "producthunt") {
-    title = `Product Hunt: ${id}`;
+    title = `Product Hunt: ${escXml(id)}`;
     color = "#ff6154";
   }
 
   if (platform === "chrome") {
-    title = `Chrome: ${id}`;
+    title = `Chrome: ${escXml(id)}`;
     color = "#4285f4";
   }
 

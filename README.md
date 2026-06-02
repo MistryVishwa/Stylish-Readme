@@ -220,9 +220,13 @@ npm install
 Start the development server:
 
 ```bash
-npm start
+npm start (static preview only — no server.js needed, project is fully serverless)
 ```
 
+<<<<<<< HEAD
+The UI workshop will be available at `http://localhost:5000`.
+
+=======
 Open:
 
 ```text
@@ -259,3 +263,4 @@ Before opening a pull request:
 For full contribution guidelines, see:
 
 **[CONTRIBUTING.md](./CONTRIBUTING.md)**
+>>>>>>> upstream/main

@@ -18,10 +18,14 @@ export default function handler(req, res) {
     return res.status(400).send(`<?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" width="320" height="80"><rect width="320" height="80" rx="12" fill="#1a1a1a"/><text x="20" y="45" font-size="13" fill="#f4f1ea" font-family="monospace">Missing: platform and id are required.</text></svg>`);
   }
 
-  const match = PLATFORMS[String(platform).toLowerCase()];
-  const label = match ? match.label : 'Marketplace';
-  const color = match ? match.color : '#4A90E2';
-  const title = `${label}: ${escXml(id)}`;
+const platformKey = String(platform || '').toLowerCase();
+const match = PLATFORMS[platformKey];
+
+const label = match ? match.label : 'Marketplace';
+const color = match ? match.color : '#4A90E2';
+
+const safeId = decodeURIComponent(String(id || '')).slice(0, 40);
+const title = `${label}: ${escXml(safeId)}`;
 
   const svg = `
 <svg width="320" height="80" xmlns="http://www.w3.org/2000/svg">

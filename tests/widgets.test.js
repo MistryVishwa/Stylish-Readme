@@ -214,6 +214,10 @@ describe('renderWidget', () => {
     expect(xml).toContain('Gooey glass refraction card.');
     expect(xml).toContain('◆ SKILLS &amp; STACK');
     expect(xml).toContain('goo_');
+  test('renders a countdown widget SVG', async () => {
+    const xml = await renderWidget('countdown', { eventName: 'Graduation', targetDate: '2026-05-15' });
+    expect(xml).toContain('COUNTDOWN TO');
+    expect(xml).toContain('GRADUATION');
   });
 });
 

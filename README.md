@@ -182,6 +182,16 @@ Procedural sky & ocean widgets that shift color palettes dynamically based on yo
 
 <img src="https://readmeme.eu.cc/api/skyline.svg?skylineStyle=card&time=1000&name=Alex+Developer&role=Front-End+Explorer&bio=Chasing+sunsets+and+beautiful+code.&skills=HTML%2CCSS%2CJS%2CREACT%2CTAILWIND%2CFIGMA&handle=alexdev&avatar=https%3A%2F%2Fgithub.com%2Fgithub.png" alt="Skyline Profile Card Preview" />
 
+### 8. Event Countdown
+
+```md
+![Hacktoberfest Countdown](https://readmeme.eu.cc/api/countdown.svg?theme=terminal&eventName=Hacktoberfest&targetDate=2026-10-31)
+```
+
+<img src="https://readmeme.eu.cc/api/countdown.svg?theme=terminal&eventName=Hacktoberfest&targetDate=2026-10-31" alt="Countdown Preview" />
+
+
+
 ## Parameter Reference
 
 ### Global Parameters

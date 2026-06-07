@@ -20,6 +20,9 @@ const CACHE_POLICIES = {
   timezone: 'public, max-age=60, s-maxage=60, stale-while-revalidate=30',
   skyline:  'public, max-age=60, s-maxage=60, stale-while-revalidate=30',
 
+  // Weather data - refresh every 30 minutes to avoid hitting API rate limits
+  weather:  'public, max-age=1800, s-maxage=1800, stale-while-revalidate=600',
+
   // Daily-change widgets — refresh every hour
   date:    'public, max-age=3600, s-maxage=3600, stale-while-revalidate=600',
   quote:   'public, max-age=3600, s-maxage=3600, stale-while-revalidate=600',

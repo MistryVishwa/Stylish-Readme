@@ -50,6 +50,22 @@ const CACHE_POLICIES = {
 
   // Fully static content — refresh every 24 hours
   flag: 'public, max-age=86400, s-maxage=86400, stale-while-revalidate=3600',
+
+  // New widgets — GitHub API data (hourly refresh to respect rate limits)
+  contributions: 'public, max-age=3600, s-maxage=3600, stale-while-revalidate=600',
+  'streak-enhanced': 'public, max-age=3600, s-maxage=3600, stale-while-revalidate=600',
+  stats: 'public, max-age=3600, s-maxage=3600, stale-while-revalidate=600',
+  contributors: 'public, max-age=3600, s-maxage=3600, stale-while-revalidate=600',
+  
+  // New widgets — static content
+  social: 'public, max-age=86400, s-maxage=86400, stale-while-revalidate=3600',
+  techstack: 'public, max-age=86400, s-maxage=86400, stale-while-revalidate=3600',
+  version: 'public, max-age=3600, s-maxage=3600, stale-while-revalidate=600',
+  activity: 'public, max-age=1800, s-maxage=1800, stale-while-revalidate=600',
+  
+  // External service widgets
+  youtube: 'public, max-age=7200, s-maxage=7200, stale-while-revalidate=1800',
+  extension: 'public, max-age=3600, s-maxage=3600, stale-while-revalidate=600'
 };
 
 /** Default fallback for any future widget types not yet in CACHE_POLICIES. */
